@@ -1,0 +1,367 @@
+/*html {
+  height: 100%;
+}*/
+
+/*body {
+  background: black;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+}*/
+
+/* GLASS */
+.glass {
+  position: relative;
+  width: 40vmin;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.glass svg {
+  position: relative;
+  z-index: 1;
+  display: block;
+  transform: translateZ(100vmin);
+}
+
+.glass .wrapper {
+  position: absolute;
+  left: 10.5%;
+  right: 10.5%;
+  top: 5%;
+  bottom: -15%;
+  transform: perspective(96vmin) rotateX(-30.8deg);
+}
+
+.glass .contents {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 0 25% 25% / 0 0 10% 10%;
+  overflow: hidden;
+}
+
+
+/* BEER */
+.glass .beer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  background-size: 100% 100%;
+  animation-name: fill;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1526092/beer.png');
+  /* Had to use an image for the gradient because css linear gradients don't create a smooth enough ramp between stops for my liking. */
+}
+
+.glass .surface {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  transform: scale(0);
+  opacity: 1;
+  animation-name: surface;
+}
+
+.glass .surface::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding-bottom: 15%;
+  margin-top: -5%;
+  border-radius: 50%;
+  background: #000;
+  opacity: 0.35;
+}
+
+.glass .surface::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding-bottom: 15%;
+  margin-top: -7.5%;
+  border-radius: 50%;
+  background: #d39909;
+}
+
+@keyframes fill {
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 89%;
+  }
+}
+
+@keyframes surface {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  10%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* BUBBLES */
+.glass .bubbles {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.glass .bubbles .layer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10%;
+  padding-bottom: 200%;
+  background-size: 100% auto;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1526092/bubbles.png');
+  background-repeat: repeat-y;
+  mask-image: linear-gradient(to top, transparent 20%, black 100%);
+  animation-name: bubbly;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.glass .bubbles .layer.more {
+  transform: rotate(180deg);
+  mask-image: linear-gradient(to bottom, transparent 40%, black 100%);
+  animation-direction: reverse;
+  animation-duration: 3.5s;
+  opacity: 0.65;
+}
+
+@keyframes bubbly {
+  from {
+    background-position-y: 100%
+  }
+}
+
+
+/* HEAD */
+.glass .head {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  padding-bottom: 0%;
+  opacity: 0;
+  animation-name: fill-head;
+  background: linear-gradient(to right, rgba(178,178,178,1) 0%,rgba(235,235,235,1) 50%,rgba(178,178,178,1) 100%);
+}
+
+.glass .head::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 15%;
+  border-radius: 50%;
+  margin-bottom: -7.5%;
+  background: linear-gradient(to right, rgba(178,178,178,1) 0%,rgba(235,235,235,1) 50%,rgba(178,178,178,1) 100%);
+}
+
+.glass .head::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding-bottom: 15%;
+  margin-top: -7.5%;
+  border-radius: 50%;
+  background: #f4f4f4;
+}
+
+@keyframes fill-head {
+  0% {
+    padding-bottom: 0%;
+    opacity: 0;
+  }
+  35% {
+    padding-bottom: 0%;
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    padding-bottom: 20.5%;
+  }
+}
+
+
+/* POUR */
+
+.pour {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  opacity: 0;
+  height: 200%;
+  transform: translateX(-50%);
+  animation-name: pour-position;
+  transition: 200ms;
+}
+
+.pour .stream {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, rgba(211,153,9,0) 0%,rgba(211,153,9,1) 20%,rgba(211,153,9,1) 100%);
+  animation-name: pour-opacity;
+}
+
+.pour .stream::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 25%;
+  border-radius: 50%;
+  background: #d39909;
+  transform: translateY(50%);
+}
+
+@keyframes pour-position {
+  0% {
+    bottom: 0;
+    margin-bottom: 0%;
+    height: 200%;
+  }
+  35% {
+    margin-bottom: 0%;
+  }
+  100% {
+    bottom: 89%;
+    margin-bottom: 20.5%;
+    height: 50%;
+  }
+}
+
+@keyframes pour-opacity {
+  0%,96% {
+    opacity: 1;
+    width: 100%;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+
+/* INSTRUCTIONS */
+.instructions {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  color: #fff;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 3vmin;
+  opacity: 0.5;
+  text-transform: uppercase;
+  transform: translate(-50%,-50%);
+  animation-name: instructions;
+}
+
+@media (pointer: fine) {
+  .instructions::before {
+    content: "Click ";
+  }
+}
+
+@media (pointer: coarse) {
+  .instructions::before {
+    content: "Tap ";
+  }
+}
+
+@keyframes instructions {
+  0%, 15% {
+    opacity: 0.5;
+  }
+  20%, 100% {
+    opacity: 0;
+  }
+}
+
+
+/* DEFINE ANIMATION */
+
+.glass .beer,
+.glass .head,
+.glass .surface,
+.glass .pour,
+.glass .pour .stream,
+.instructions {
+  animation-timing-function: cubic-bezier(.2,0,.4,1);
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+
+
+/* ANIMATE FILL */
+@media (pointer: fine) {
+  .glass:active .beer,
+  .glass:active .head,
+  .glass:active .surface,
+  .glass:active .pour,
+  .glass:active .pour .stream,
+  .glass:active ~ .instructions {
+    animation-play-state: running;
+  }
+
+  .glass:active .pour {
+    width: 10%;
+    opacity: 1;
+  }
+}
+
+@media (pointer: coarse) {
+  .glass:hover .beer,
+  .glass:hover .head,
+  .glass:hover .surface,
+  .glass:hover .pour,
+  .glass:hover .pour .stream,
+  .glass:hover ~ .instructions {
+    animation-play-state: running;
+  }
+
+  .glass:hover .pour {
+    width: 10%;
+    opacity: 1;
+  }
+}
