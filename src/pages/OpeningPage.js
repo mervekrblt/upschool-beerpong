@@ -2,10 +2,10 @@ import "./OpeningHome.css";
 
 const OpeningPage = () => {
   return (
-    <>
-      <div className="container">
-        <h1 className="text-center">Press on the Glass</h1>
-          <div className="glass mx-auto mt-5">
+    <div className="opening-bg">
+      <div className="container fixed-bottom mb-5">
+        <h1 className="text-center text-lg text-dark mb-5">Press On The Glass</h1>
+          <div className="glass mx-auto">
             <div className="wrapper">
               <div className="pour">
                 <div className="stream"></div>
@@ -109,7 +109,7 @@ const OpeningPage = () => {
             </svg>
           </div>
       </div>
-    </>
+    </div>
   );
 };
 export default OpeningPage;

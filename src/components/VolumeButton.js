@@ -12,12 +12,12 @@ const VolumeButton = ({ name, btnName, setButton, active, button }) => {
     item.btnName === button ? (item.active = true) : (item.active = false)
   );
 
-  const makeDisable = active ? "active btn-success" : "btn-secondary ";
+  const makeDisable = active ? "active btn-light" : "btn-dark ";
 
   return (
     <>
       <button
-        className={`btn  ${makeDisable}`}
+        className={`btn mt-5 mb-5 me-2 px-3 ${makeDisable}`}
         onClick={handleButton}
         name={btnName}
       >

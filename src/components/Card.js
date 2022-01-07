@@ -1,16 +1,17 @@
-const Card = ({name, img}) => {
+const Card = ({ name, img, brew }) => {
   return (
     <>
-      <div className="col border-warning">
-        <div className="card">
-          <img src={img} style={{width: "3rem", height: "10rem"}} className="card-img-top" alt="a beer" />
+      <div className="col">
+        <div className="card text-center p-3 custom-card h-100">
+          <img
+            src={img}
+            style={{ height: "10rem" }}
+            className="mx-auto"
+            alt="a beer"
+          />
           <div className="card-body">
             <h5 className="card-title">{name}</h5>
-            <p className="card-text">
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
+            <p className="card-text">First brewed in {brew}</p>
           </div>
         </div>
       </div>
