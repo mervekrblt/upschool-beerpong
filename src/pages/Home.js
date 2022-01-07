@@ -12,12 +12,13 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [button, setButton] = useState("none");
   const [volume, setVolume] = useState(20);
-  //const [disablePh, setDisablePh] = useState(true);
-  const [ph, setPh] = useState(0);
+  const [ph, setPh] = useState([0, 7]);
 
   const PER_PAGE = 3;
   const offset = currentPage * PER_PAGE;
-  const currentPageData = data.slice(offset, offset + PER_PAGE);
+  const currentPageData = data?.filter(
+    (item) => ph[0] <= item.ph &&  ph[1] >= item.ph 
+  ).slice(offset, offset + PER_PAGE);
   const pageCount = Math.ceil(data.length / PER_PAGE);
 
   useEffect(() => {
@@ -43,6 +44,16 @@ const Home = () => {
       .then((data) => setData(data));
   }, [button, volume]);
 
+  /*useEffect(() => {
+    console.log("filter based on ph", ph, ph[0]);
+    const filteredData = data.filter(
+      (item) => ph[0] <= item.ph &&  ph[1] >= item.ph 
+    );
+    setData(filteredData)
+    console.log(filteredData)
+  }, [ph]);*/
+
+  console.log(data)
   return (
     <div className="">
       <div className="container mt-5">
@@ -59,10 +70,7 @@ const Home = () => {
               ></VolumeButton>
             ))}
             <CustomSlider volume={volume} setVolume={setVolume}></CustomSlider>
-            <PhSlider
-              ph={ph}
-              setPh={setPh}
-            ></PhSlider>
+            <PhSlider ph={ph} setPh={setPh}></PhSlider>
           </div>
           <div className="col-lg-8 col-12">
             <div className="container">

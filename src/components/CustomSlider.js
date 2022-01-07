@@ -1,7 +1,7 @@
 import { Slider } from "antd";
 
 const CustomSlider = ({ volume, setVolume }) => {
-  console.log(volume);
+  //console.log(volume);
   return (
     <>
       <Slider
