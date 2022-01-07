@@ -5,12 +5,15 @@ import Card from "../components/Card";
 import CustomSlider from "../components/CustomSlider";
 import BASE_URL from "../BASE_URL";
 import VolumeButton from "../components/VolumeButton";
+import PhSlider from "../components/PhSlider";
 
 const Home = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [data, setData] = useState([]);
   const [button, setButton] = useState("none");
   const [volume, setVolume] = useState(20);
+  //const [disablePh, setDisablePh] = useState(true);
+  const [ph, setPh] = useState(0);
 
   const PER_PAGE = 3;
   const offset = currentPage * PER_PAGE;
@@ -56,6 +59,10 @@ const Home = () => {
               ></VolumeButton>
             ))}
             <CustomSlider volume={volume} setVolume={setVolume}></CustomSlider>
+            <PhSlider
+              ph={ph}
+              setPh={setPh}
+            ></PhSlider>
           </div>
           <div className="col-lg-8 col-12">
             <div className="container">
