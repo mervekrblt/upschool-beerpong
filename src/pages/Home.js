@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import volumeData from "../data/volumeData";
 import Card from "../components/Card";
+import CustomSlider from "../components/CustomSlider";
 import BASE_URL from "../BASE_URL";
 import VolumeButton from "../components/VolumeButton";
 
@@ -9,6 +10,7 @@ const Home = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [data, setData] = useState([]);
   const [button, setButton] = useState("none");
+  const [volume, setVolume] = useState(20);
 
   const PER_PAGE = 3;
   const offset = currentPage * PER_PAGE;
@@ -32,11 +34,11 @@ const Home = () => {
   }
 
   useEffect(() => {
-    console.log(button, "apiye istek at");
-    fetch(`${BASE_URL}&${button}=2`)
+    console.log(button, `${BASE_URL}&${button}=${volume}`);
+    fetch(`${BASE_URL}&${button}=${volume}`)
       .then((res) => res.json())
       .then((data) => setData(data));
-  }, [button]);
+  }, [button, volume]);
 
   return (
     <div className="">
@@ -53,6 +55,7 @@ const Home = () => {
                 setButton={setButton}
               ></VolumeButton>
             ))}
+            <CustomSlider volume={volume} setVolume={setVolume}></CustomSlider>
           </div>
           <div className="col-lg-8 col-12">
             <div className="container">

@@ -1,11 +1,12 @@
+@import '~antd/dist/antd.css';
 $dark: black;
-$light: #e3b905;
+$light: #e3b905 ;
 
-.bg-body {
+/*.bg-body {
   background: (url(../public/beer3.png));
   height: 100vh;
   background-size: cover;
-}
+}*/
 
 .opening-bg {
   background: (url(../public/pub.jpg));
@@ -17,6 +18,18 @@ $light: #e3b905;
   -webkit-box-shadow: 15px 12px 20px 1px rgba(227, 185, 5, 1);
   -moz-box-shadow: 15px 12px 20px 1px rgba(227, 185, 5, 1);
   box-shadow: 15px 12px 20px 1px rgba(227, 185, 5, 1);
+}
+
+.ant-slider {
+  &-track {
+    background-color: $dark;
+  }
+  &-handle {
+    border: solid 2px $light;
+    &-click-focuse {
+      color: pink;
+    }
+    }
 }
 $font-family-sans-serif: "UnifrakturMaguntia", cursive;
 @import "../node_modules/bootstrap/scss/bootstrap.scss";

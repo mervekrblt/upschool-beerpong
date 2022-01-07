@@ -6,7 +6,7 @@ const Navbar = () => {
     <>
       <nav className="navbar navbar-expand-lg text-light bg-dark shadow p-3  ">
         <div className="container-fluid">
-          <h1 className="mx-auto">
+          <h1 className="mx-auto text-light">
             <i className="me-5">
               <IoBeer />
             </i>
