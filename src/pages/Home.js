@@ -6,6 +6,7 @@ import CustomSlider from "../components/CustomSlider";
 import BASE_URL from "../BASE_URL";
 import VolumeButton from "../components/VolumeButton";
 import PhSlider from "../components/PhSlider";
+import SrmSlider from "../components/SrmSlider";
 
 const Home = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -13,12 +14,18 @@ const Home = () => {
   const [button, setButton] = useState("none");
   const [volume, setVolume] = useState(20);
   const [ph, setPh] = useState([0, 7]);
+  const [srm, setSrm] = useState(0);
 
   const PER_PAGE = 3;
   const offset = currentPage * PER_PAGE;
-  const currentPageData = data?.filter(
-    (item) => ph[0] <= item.ph &&  ph[1] >= item.ph 
-  ).slice(offset, offset + PER_PAGE);
+  const currentPageData = data
+    .filter(
+      (item) =>
+        (ph[0] <= item.ph &&
+        ph[1] >= item.ph) &&
+        item.srm >= srm 
+    )
+    .slice(offset, offset + PER_PAGE);
   const pageCount = Math.ceil(data.length / PER_PAGE);
 
   useEffect(() => {
@@ -53,7 +60,8 @@ const Home = () => {
     console.log(filteredData)
   }, [ph]);*/
 
-  console.log(data)
+  console.log(data);
+  console.log(currentPageData)
   return (
     <div className="">
       <div className="container mt-5">
@@ -71,10 +79,11 @@ const Home = () => {
             ))}
             <CustomSlider volume={volume} setVolume={setVolume}></CustomSlider>
             <PhSlider ph={ph} setPh={setPh}></PhSlider>
+            <SrmSlider srm={srm} setSrm={setSrm}></SrmSlider>
           </div>
-          <div className="col-lg-8 col-12">
+          <div className="col-lg-8 col-12 mt-5 mt-lg-0">
             <div className="container">
-              <div className="row row-cols-1 row-cols-md-3 g-4">
+              <div className="row row-cols-1 row-cols-md-3 border">
                 {currentPageData.map((item, index) => {
                   return (
                     <Card
