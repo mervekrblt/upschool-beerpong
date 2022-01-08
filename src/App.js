@@ -14,10 +14,10 @@ function App() {
     <>
       {isLoading && <OpeningPage></OpeningPage>}
       {!isLoading && (
-        <>
+        <div className="bg-body">
           <Navbar></Navbar>
           <Home></Home>
-        </>
+        </div>
       )}
     </>
   );

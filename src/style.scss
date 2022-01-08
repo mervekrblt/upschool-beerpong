@@ -2,11 +2,13 @@
 $dark: black;
 $light: #e3b905 ;
 
-/*.bg-body {
-  background: (url(../public/beer3.png));
-  height: 100vh;
-  background-size: cover;
-}*/
+.bg-body {
+  background: (url(../public/pong.jpg));
+  background-position: center;
+  background-attachment: fixed;
+  //height: 100vh;
+  //background-size: cover;
+}
 
 .opening-bg {
   background: (url(../public/pub.jpg));
@@ -15,9 +17,9 @@ $light: #e3b905 ;
 }
 
 .custom-card {
-  -webkit-box-shadow: 15px 12px 20px 1px rgba(227, 185, 5, 1);
-  -moz-box-shadow: 15px 12px 20px 1px rgba(227, 185, 5, 1);
-  box-shadow: 15px 12px 20px 1px rgba(227, 185, 5, 1);
+  border-radius: 100px 32px 101px 32px;
+  border: $dark 2px solid;
+  box-shadow: 4px 4px 14px 10px rgba(0, 0, 0, 0.49);
 }
 
 .ant-slider {

@@ -1,8 +1,8 @@
 const Card = ({ name, img, brew }) => {
   return (
     <>
-      <div className="col">
-        <div className="card text-center p-3 custom-card h-100">
+      <div className="col mb-5">
+        <div className="text-center p-3 custom-card bg-light h-100">
           <img
             src={img}
             style={{ height: "10rem" }}

@@ -63,10 +63,9 @@ const Home = () => {
   console.log(data);
   console.log(currentPageData)
   return (
-    <div className="">
       <div className="container mt-5">
         <div className="row">
-          <div className="col-lg-4 col-12 border text-center">
+          <div className="col-lg-4 col-12 text-center bg-danger">
             {volumeData.map((data) => (
               <VolumeButton
                 key={data.id}
@@ -83,7 +82,7 @@ const Home = () => {
           </div>
           <div className="col-lg-8 col-12 mt-5 mt-lg-0">
             <div className="container">
-              <div className="row row-cols-1 row-cols-md-3 border">
+              <div className="row row-cols-1 row-cols-md-3">
                 {currentPageData.map((item, index) => {
                   return (
                     <Card
@@ -110,7 +109,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 export default Home;
