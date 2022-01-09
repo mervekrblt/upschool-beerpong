@@ -8,6 +8,7 @@ import VolumeButton from "../components/VolumeButton";
 import PhSlider from "../components/PhSlider";
 import SrmSlider from "../components/SrmSlider";
 import Search from "../components/Search";
+import NotFound from "./NotFound";
 
 const Home = () => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -29,12 +30,10 @@ const Home = () => {
     };
   };
 
-  console.log(name)
-
-
   const PER_PAGE = 3;
   const offset = currentPage * PER_PAGE;
   const currentPageData = data
+    .filter((item) => item.name.toLowerCase().includes(name))
     .filter((item) => ph[0] <= item.ph && ph[1] >= item.ph && item.srm >= srm)
     .slice(offset, offset + PER_PAGE);
   const pageCount = Math.ceil(data.length / PER_PAGE);
@@ -76,7 +75,14 @@ const Home = () => {
   return (
     <div className="container my-5">
       <div className="mx-auto">
-        <Search debounce={debounce} setName={setName}></Search>
+        <Search
+          debounce={debounce}
+          setName={setName}
+          setButton={setButton}
+          setVolume={setVolume}
+          setPh={setPh}
+          setSrm={setSrm}
+        ></Search>
       </div>
 
       <div className="row">
@@ -108,9 +114,10 @@ const Home = () => {
                   ></Card>
                 );
               })}
+              {currentPageData.length === 0 && <NotFound></NotFound>}
             </div>
           </div>
-          <ReactPaginate
+          {currentPageData.length !== 0 && <ReactPaginate
             previousLabel={"previous"}
             nextLabel={"next"}
             breakLabel={"..."}
@@ -120,7 +127,7 @@ const Home = () => {
             containerClassName={"pagination"}
             subContainerClassName={"pages pagination"}
             activeClassName={"active"}
-          />
+          />}
         </div>
       </div>
     </div>
