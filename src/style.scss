@@ -20,6 +20,38 @@ $light: #e3b905 ;
   border-radius: 100px 32px 101px 32px;
   border: $dark 2px solid;
   box-shadow: 4px 4px 14px 10px rgba(0, 0, 0, 0.49);
+  background-color: #facc01b0;
+}
+
+.filter-card {
+  border-radius: 40px;
+  border: rgba(245, 245, 245, 0.555) 2px solid;
+  background-color: rgba(245, 245, 245, 0.555);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  outline: none;
+}
+
+.pagination>.active>a {
+  background-color: $light;
+}
+
+.pagination>li>a {
+  border: 1px solid $dark;
+  padding: 15px 15px;
+  outline: none;
+  cursor: pointer;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+  color: white;
+  background-color: $dark;
 }
 
 .ant-slider {
@@ -28,9 +60,6 @@ $light: #e3b905 ;
   }
   &-handle {
     border: solid 2px $light;
-    &-click-focuse {
-      color: pink;
-    }
     }
 }
 $font-family-sans-serif: "UnifrakturMaguntia", cursive;

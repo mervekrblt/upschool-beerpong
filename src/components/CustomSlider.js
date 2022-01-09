@@ -6,7 +6,7 @@ const CustomSlider = ({ volume, setVolume }) => {
     <>
       <Slider
         onAfterChange={(e) => setVolume(e)}
-        className="color-primary"
+        className="color-primary mb-5"
         defaultValue={volume}
       />
     </>
