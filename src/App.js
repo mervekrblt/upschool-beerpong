@@ -9,7 +9,7 @@ function App() {
   const [isLoading, setLoadig] = useState(true);
   setTimeout(() => {
     setLoadig(false);
-  }, 1000);
+  }, 10000);
 
   return (
     <>
