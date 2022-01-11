@@ -1,5 +1,4 @@
 import { Slider, Switch } from "antd";
-import { useState } from "react";
 
 const SrmSlider = ({ disabled, setDisabled, srm, setSrm }) => {
 
