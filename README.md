@@ -1,12 +1,14 @@
 # Beer for Beerpong :beer:
+You can search beer to play beer pong :beers::ping_pong:
 
-**You sink it, They drink it**
+**You sink it, they drink it**
 
 ## [LINK](https://upschool-beerpong.vercel.app/)
 
 ## Technologies :rocket:
 - React
 - React Router Dom
+- [Beer Animation](https://speckyboy.com/css-glassmorphism/)
 - Bootstrap 5
 - React Paginate
 - React Icons
@@ -17,11 +19,11 @@
 
 - Desktop
 
-![Desktop Preview]()
+![Desktop Preview](previews/Desktop.gif)
 
 - Mobile
 
-![Mobile Preview]()
+![Mobile Preview](previews/Mobile.gif)
 
 ## How to install
 
