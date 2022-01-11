@@ -36,12 +36,7 @@ const Home = () => {
   const offset = currentPage * PER_PAGE;
   const currentPageData = data
     .filter((item) => item.name.toLowerCase().includes(name))
-    .filter(
-      (item) =>
-        ph[0] <= item.ph &&
-        ph[1] >= item.ph &&
-        (item.srm >= srm || item.srm == null)
-    )
+    .filter((item) => ph[0] <= item.ph && ph[1] >= item.ph && item.srm >= srm)
     .slice(offset, offset + PER_PAGE);
   const pageCount = Math.ceil(data.length / PER_PAGE);
 
@@ -79,13 +74,16 @@ const Home = () => {
           setVolume={setVolume}
           setPh={setPh}
           setSrm={setSrm}
-          setDisabled= {setDisabled}
-          setDisabled2= {setDisabled2}
+          setDisabled={setDisabled}
+          setDisabled2={setDisabled2}
         ></Search>
       </div>
 
       <div className="row">
         <div className="col-lg-4 col-12 text-center filter-card h-150">
+          <p className="mt-3" style={{ fontFamily: "cursive" }}>
+            VOLUME
+          </p>
           {volumeData.map((data) => (
             <VolumeButton
               key={data.id}
@@ -97,8 +95,19 @@ const Home = () => {
             ></VolumeButton>
           ))}
           <CustomSlider volume={volume} setVolume={setVolume}></CustomSlider>
-          <PhSlider disabled={disabled} setDisabled={setDisabled} setPh={setPh}></PhSlider>
-          <SrmSlider disabled={disabled2} setDisabled={setDisabled2} srm={srm} setSrm={setSrm}></SrmSlider>
+          <p style={{ fontFamily: "cursive" }}>PH</p>
+          <PhSlider
+            disabled={disabled}
+            setDisabled={setDisabled}
+            setPh={setPh}
+          ></PhSlider>
+          <p style={{ fontFamily: "cursive" }}>SRM</p>
+          <SrmSlider
+            disabled={disabled2}
+            setDisabled={setDisabled2}
+            srm={srm}
+            setSrm={setSrm}
+          ></SrmSlider>
         </div>
         <div className="col-lg-8 col-12 mt-5 mt-lg-0">
           <div className="container">
