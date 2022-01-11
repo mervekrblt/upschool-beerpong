@@ -15,7 +15,9 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [button, setButton] = useState("none");
   const [volume, setVolume] = useState(20);
+  const [disabled, setDisabled] = useState(false);
   const [ph, setPh] = useState([0, 7]);
+  const [disabled2, setDisabled2] = useState(false);
   const [srm, setSrm] = useState(0);
 
   const [name, setName] = useState("");
@@ -34,7 +36,12 @@ const Home = () => {
   const offset = currentPage * PER_PAGE;
   const currentPageData = data
     .filter((item) => item.name.toLowerCase().includes(name))
-    .filter((item) => ph[0] <= item.ph && ph[1] >= item.ph && item.srm >= srm)
+    .filter(
+      (item) =>
+        ph[0] <= item.ph &&
+        ph[1] >= item.ph &&
+        (item.srm >= srm || item.srm == null)
+    )
     .slice(offset, offset + PER_PAGE);
   const pageCount = Math.ceil(data.length / PER_PAGE);
 
@@ -61,17 +68,7 @@ const Home = () => {
       .then((data) => setData(data));
   }, [button, volume]);
 
-  /*useEffect(() => {
-    console.log("filter based on ph", ph, ph[0]);
-    const filteredData = data.filter(
-      (item) => ph[0] <= item.ph &&  ph[1] >= item.ph 
-    );
-    setData(filteredData)
-    console.log(filteredData)
-  }, [ph]);*/
-
-  console.log(data);
-  console.log(currentPageData);
+  console.log(volume);
   return (
     <div className="container my-5">
       <div className="mx-auto">
@@ -82,6 +79,8 @@ const Home = () => {
           setVolume={setVolume}
           setPh={setPh}
           setSrm={setSrm}
+          setDisabled= {setDisabled}
+          setDisabled2= {setDisabled2}
         ></Search>
       </div>
 
@@ -98,8 +97,8 @@ const Home = () => {
             ></VolumeButton>
           ))}
           <CustomSlider volume={volume} setVolume={setVolume}></CustomSlider>
-          <PhSlider ph={ph} setPh={setPh}></PhSlider>
-          <SrmSlider srm={srm} setSrm={setSrm}></SrmSlider>
+          <PhSlider disabled={disabled} setDisabled={setDisabled} setPh={setPh}></PhSlider>
+          <SrmSlider disabled={disabled2} setDisabled={setDisabled2} srm={srm} setSrm={setSrm}></SrmSlider>
         </div>
         <div className="col-lg-8 col-12 mt-5 mt-lg-0">
           <div className="container">
@@ -114,20 +113,22 @@ const Home = () => {
                   ></Card>
                 );
               })}
-              {currentPageData.length === 0 && <NotFound></NotFound>}
+              {currentPageData?.length === 0 && <NotFound />}
             </div>
           </div>
-          {currentPageData.length !== 0 && <ReactPaginate
-            previousLabel={"previous"}
-            nextLabel={"next"}
-            breakLabel={"..."}
-            breakClassName={"break-me"}
-            pageCount={pageCount}
-            onPageChange={handlePageClick}
-            containerClassName={"pagination"}
-            subContainerClassName={"pages pagination"}
-            activeClassName={"active"}
-          />}
+          {currentPageData.length !== 0 && (
+            <ReactPaginate
+              previousLabel={"previous"}
+              nextLabel={"next"}
+              breakLabel={"..."}
+              breakClassName={"break-me"}
+              pageCount={pageCount}
+              onPageChange={handlePageClick}
+              containerClassName={"pagination"}
+              subContainerClassName={"pages pagination"}
+              activeClassName={"active"}
+            />
+          )}
         </div>
       </div>
     </div>

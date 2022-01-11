@@ -4,10 +4,10 @@ $light: #e3b905 ;
 
 .bg-body {
   background: (url(../public/pong.jpg));
-  background-position: center;
+  background-position: bottom;
   background-attachment: fixed;
-  //height: 100vh;
-  //background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .opening-bg {
@@ -25,8 +25,8 @@ $light: #e3b905 ;
 
 .filter-card {
   border-radius: 40px;
-  border: rgba(245, 245, 245, 0.555) 2px solid;
-  background-color: rgba(245, 245, 245, 0.555);
+  border: rgb(0, 0, 0) 2px solid;
+  background-color: rgba(245, 245, 245, 0.486);
 }
 
 .pagination {

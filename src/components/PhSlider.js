@@ -1,12 +1,8 @@
 import { Slider, Switch } from "antd";
-import { useState } from "react";
 
-const PhSlider = ({ ph, setPh }) => {
-  const [disabled, setDisabled] = useState(false);
+const PhSlider = ({ disabled, setDisabled, setPh }) => {
 
   const handlerPh = (e) => {
-    //console.log(e); 
-    //console.log(ph) why undefined logged
     setPh(e)
   };
   return (

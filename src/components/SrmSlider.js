@@ -1,8 +1,8 @@
 import { Slider, Switch } from "antd";
 import { useState } from "react";
 
-const SrmSlider = ({ srm, setSrm }) => {
-  const [disabled, setDisabled] = useState(false);
+const SrmSlider = ({ disabled, setDisabled, srm, setSrm }) => {
+
   return (
     <div className="d-flex flex-row align-items-center">
       <Switch

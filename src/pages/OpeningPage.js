@@ -4,87 +4,89 @@ const OpeningPage = () => {
   return (
     <div className="opening-bg">
       <div className="container fixed-bottom mb-5">
-        <h1 className="text-center text-lg text-dark mb-5">Press On The Glass</h1>
-          <div className="glass mx-auto">
-            <div className="wrapper">
-              <div className="pour">
-                <div className="stream"></div>
-              </div>
-              <div className="contents">
-                <div className="beer">
-                  <div className="bubbles">
-                    <div className="layer"></div>
-                    <div className="layer more"></div>
-                  </div>
-                  <div className="surface">
-                    <div className="head"></div>
-                  </div>
+        <h1 className="text-center text-lg text-dark mb-5">
+          Press On The Glass
+        </h1>
+        <div className="glass mx-auto">
+          <div className="wrapper">
+            <div className="pour">
+              <div className="stream"></div>
+            </div>
+            <div className="contents">
+              <div className="beer">
+                <div className="bubbles">
+                  <div className="layer"></div>
+                  <div className="layer more"></div>
+                </div>
+                <div className="surface">
+                  <div className="head"></div>
                 </div>
               </div>
             </div>
-            <svg viewBox="0 0 550 980">
-              <linearGradient
-                id="SVGID_1_"
-                gradientUnits="userSpaceOnUse"
-                x1="399.6879"
-                y1="462.5569"
-                x2="516.6628"
-                y2="462.5569"
-              >
-                <stop
-                  offset="0.1021"
-                  style={{ stopColor: "#FFFFFF", stopOpacity: "0" }}
-                />
-                <stop offset="1" style={{ stopColor: "#FFFFFF" }} />
-              </linearGradient>
-              <path
-                className="st0"
-                d="M399.69,81.11c39.58-2.26,83.23-10.35,104.66-14.72c6.71-1.37,12.84,4.07,12.28,10.89
-      c-11.21,135.24-66.63,741.35-68.14,757c-1.57,16.27-35.15,24.66-35.15,24.66C439.56,549.38,399.69,81.11,399.69,81.11z"
+          </div>
+          <svg viewBox="0 0 550 980">
+            <linearGradient
+              id="SVGID_1_"
+              gradientUnits="userSpaceOnUse"
+              x1="399.6879"
+              y1="462.5569"
+              x2="516.6628"
+              y2="462.5569"
+            >
+              <stop
+                offset="0.1021"
+                style={{ stopColor: "#FFFFFF", stopOpacity: "0" }}
               />
-              <path className="st1" d="M507.67,73.32" />
-              <path
-                className="st2"
-                d="M519.05,43.86c-19.85,4.57-40.18,6.98-60.48,8.99c-20.32,1.97-40.7,3.3-61.1,4.29
+              <stop offset="1" style={{ stopColor: "#FFFFFF" }} />
+            </linearGradient>
+            <path
+              className="st0"
+              d="M399.69,81.11c39.58-2.26,83.23-10.35,104.66-14.72c6.71-1.37,12.84,4.07,12.28,10.89
+      c-11.21,135.24-66.63,741.35-68.14,757c-1.57,16.27-35.15,24.66-35.15,24.66C439.56,549.38,399.69,81.11,399.69,81.11z"
+            />
+            <path className="st1" d="M507.67,73.32" />
+            <path
+              className="st2"
+              d="M519.05,43.86c-19.85,4.57-40.18,6.98-60.48,8.99c-20.32,1.97-40.7,3.3-61.1,4.29
       c-40.79,1.98-85.04,2.97-122.48,2.97s-81.69-1-122.48-2.97c-20.39-0.99-40.78-2.32-61.1-4.29c-20.3-2.02-40.62-4.42-60.48-8.99
       l-0.42,1.67c19.92,5.04,40.25,9.5,60.57,11.97c20.34,2.41,40.74,4.2,61.16,5.63C193.11,66,235.57,67.88,275,67.88
       c39.43,0,81.89-1.88,122.74-4.75c20.42-1.43,40.83-3.22,61.16-5.63c20.32-2.47,40.65-6.92,60.57-11.97L519.05,43.86z"
-              />
-              <path
-                className="st3"
-                d="M333.03,908.96c-19.07-1.51-41.93-2.67-58.03-2.67s-38.96,1.16-58.03,2.67c-19.06,1.52-38.08,3.67-56.93,6.86
+            />
+            <path
+              className="st3"
+              d="M333.03,908.96c-19.07-1.51-41.93-2.67-58.03-2.67s-38.96,1.16-58.03,2.67c-19.06,1.52-38.08,3.67-56.93,6.86
       l0.22,1.39c18.88-2.59,37.89-4.14,56.92-5.05c19.03-0.91,34.61-0.87,57.82-0.87s38.79-0.04,57.82,0.87
       c19.03,0.92,38.04,2.47,56.92,5.05l0.22-1.39C371.11,912.64,352.09,910.48,333.03,908.96z"
-              />
-              <path
-                className="st4"
-                d="M275,829.75c-32.91,0-89.08,3.57-132.66,10.66l0.21,1.39c43.66-5.88,95.72-7.05,132.45-7.05
+            />
+            <path
+              className="st4"
+              d="M275,829.75c-32.91,0-89.08,3.57-132.66,10.66l0.21,1.39c43.66-5.88,95.72-7.05,132.45-7.05
       s88.79,1.17,132.45,7.05l0.21-1.39C364.08,833.32,307.91,829.75,275,829.75z"
+            />
+            <linearGradient
+              id="SVGID_2_"
+              gradientUnits="userSpaceOnUse"
+              x1="1108.0135"
+              y1="462.5569"
+              x2="1224.9884"
+              y2="462.5569"
+              gradientTransform="matrix(-1 0 0 1 1258.3256 0)"
+            >
+              <stop
+                offset="0.1021"
+                style={{ stopColor: "#FFFFFF", stopOpacity: "0" }}
               />
-              <linearGradient
-                id="SVGID_2_"
-                gradientUnits="userSpaceOnUse"
-                x1="1108.0135"
-                y1="462.5569"
-                x2="1224.9884"
-                y2="462.5569"
-                gradientTransform="matrix(-1 0 0 1 1258.3256 0)"
-              >
-                <stop
-                  offset="0.1021"
-                  style={{ stopColor: "#FFFFFF", stopOpacity: "0" }}
-                />
-                <stop offset="1" style={{ stopColor: "#FFFFFF" }} />
-              </linearGradient>
-              <path
-                className="st5"
-                d="M150.31,81.11c-39.58-2.26-83.23-10.35-104.66-14.72c-6.71-1.37-12.84,4.07-12.28,10.89
+              <stop offset="1" style={{ stopColor: "#FFFFFF" }} />
+            </linearGradient>
+            <path
+              className="st5"
+              d="M150.31,81.11c-39.58-2.26-83.23-10.35-104.66-14.72c-6.71-1.37-12.84,4.07-12.28,10.89
       c11.21,135.24,66.63,741.35,68.14,757c1.57,16.27,35.15,24.66,35.15,24.66C110.44,549.38,150.31,81.11,150.31,81.11z"
-              />
-              <path className="st1" d="M42.33,73.32" />
-              <path
-                className="st1"
-                d="M549.97,30.97c-0.02-0.6-0.13-1.13-0.27-1.67c-0.14-0.52-0.29-1.11-0.48-1.54c-0.38-0.87-0.85-1.8-1.32-2.4
+            />
+            <path className="st1" d="M42.33,73.32" />
+            <path
+              className="st1"
+              d="M549.97,30.97c-0.02-0.6-0.13-1.13-0.27-1.67c-0.14-0.52-0.29-1.11-0.48-1.54c-0.38-0.87-0.85-1.8-1.32-2.4
       c-0.24-0.33-0.48-0.67-0.73-0.98l-0.71-0.77c-1.93-1.96-3.7-3.02-5.41-4C539.34,18.67,444.21,0,275,0S10.66,18.67,8.96,19.62
       c-1.7,0.98-3.47,2.04-5.41,4l-0.71,0.77c-0.25,0.3-0.49,0.65-0.73,0.98c-0.47,0.6-0.94,1.52-1.32,2.4c-0.2,0.43-0.35,1.02-0.48,1.54
       c-0.14,0.53-0.25,1.07-0.27,1.67C0,31.52-0.01,32.21,0.01,32.65l0.05,0.58l0.37,4.63l1.47,18.54c3.96,49.44,8.46,98.83,13.02,148.18
@@ -105,9 +107,9 @@ const OpeningPage = () => {
       c6,1.04,11.97,2.19,17.81,3.56c5.81,1.37,11.62,2.95,16.67,5.03c1.23,0.53,2.43,1.07,3.43,1.65c0.63,0.36,1.2,0.74,1.59,1.05
       L535.45,36.78z M535.82,31.92c0-0.15,0.01-0.31,0.03-0.35L535.82,31.92z M536.25,33.43C536.25,33.43,536.24,33.42,536.25,33.43
       c0.01,0.01,0.03,0.02,0.05,0.04C536.29,33.47,536.25,33.45,536.25,33.43z"
-              />
-            </svg>
-          </div>
+            />
+          </svg>
+        </div>
       </div>
     </div>
   );
